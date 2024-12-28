@@ -1,0 +1,168 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  padding: 20px;
+  margin: 0;
+}
+
+/* Container Styles */
+.container {
+  width: 100%;
+  max-width: 1000px; /* You can increase this value for a wider layout */
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between; /* Places the elements on the left and right */
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 0 auto; /* Centers the container horizontally */
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  color: #333;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Left Section - Expense Input */
+.add-expense {
+  flex: 1 1 45%; /* Take 45% of the width */
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Adds space between input fields */
+}
+
+.add-expense label {
+  font-size: 1.1em;
+  color: #555;
+}
+
+.add-expense input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.add-expense button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-expense button:hover {
+  background-color: #45a049;
+}
+
+/* Right Section - Expense List */
+.expense-list {
+  flex: 1 1 45%; /* Take 45% of the width */
+  margin-top: 20px;
+}
+
+.expense-list h3 {
+  font-size: 1.4em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.expense-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.expense-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.expense-list li span {
+  font-size: 1.1em;
+  color: #333;
+}
+
+.expense-list button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.3s;
+}
+
+.expense-list button:hover {
+  background-color: #e53935;
+}
+
+/* Delete All Button */
+.delete-all {
+  background-color: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s;
+}
+
+.delete-all:hover {
+  background-color: #e64a19;
+}
+
+/* Responsive Design - Stacked Layout for Small Screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .add-expense,
+  .expense-list {
+    flex: 1 1 100%; /* Take 100% of the width */
+  }
+
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .add-expense button {
+    font-size: 1em;
+  }
+
+  .expense-list button {
+    font-size: 0.8em;
+  }
+
+  .delete-all {
+    font-size: 1em;
+  }
+}
