@@ -1,8 +1,31 @@
-# React + Vite
+# Expense Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple react application which can add, view, delete expenses easily. 
 
-Currently, two official plugins are available:
+## Features
+- **Add Expenses**: Input Name and Amount of Expense.
+- **View Expenses**: View All Expenses in List Format.
+- **Delete Expenses**: Delete One Expense or All the Expenses at Once.
+- **Local Storage**: Expenses are Saved Locally and Expenses Persist across Sessions 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How to Run
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd expense-tracker-react
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+4. Run the project:
+   ```bash
+   npm run dev
+   ```
+
