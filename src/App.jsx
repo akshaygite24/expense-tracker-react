@@ -1,8 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ExpenseInput from "./ExpenseInput";
 import ExpenseList from "./ExpenseList";
 function App() {
-  const [expense, setExpense] = useState([]);
+  const [expense, setExpense] = useState(() => {
+    try {
+      const storedExpenses = localStorage.getItem("expenses");
+    return storedExpenses ? JSON.parse(storedExpenses) : [];
+    } catch (error) {
+      console.error(`Error Loading Data from local Storage ${error}`);
+      return [];
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem("expenses", JSON.stringify(expense));
+  }, [expense]);
 
   const addExpense = (name, amount) => {
     setExpense((prevExpenses) => {
