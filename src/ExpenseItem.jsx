@@ -1,22 +1,23 @@
-export default function ExpenseItem() {
+export default function ExpenseItem({ expense, handleDelete }) {
+  const deleteExp = (id) => {
+    handleDelete(id);
+  };
   return (
     <>
-      <li>
-        <span>Expense 1</span>
-        <span>10</span>
-        <button>Delete</button>
-      </li>
-      <li>
-        <span>Expense 1</span>
-        <span>10</span>
-        <button>Delete</button>
-      </li>
-      <li>
-        <span>Expense 1</span>
-        <span>10</span>
-        <button>Delete</button>
-      </li>
-      
+      {expense != null &&
+        expense.length > 0 && ( //expense check if it is null or undefined
+          <>
+            {expense.map((exp) => {
+              return (
+                <li key={exp.id}>
+                  <span>{exp.name}</span>
+                  <span>{exp.amount}</span>
+                  <button onClick={() => deleteExp(exp.id)}>Delete</button>
+                </li>
+              );
+            })}
+          </>
+        )}
     </>
   );
 }
